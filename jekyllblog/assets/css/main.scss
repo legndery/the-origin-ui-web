@@ -25,3 +25,9 @@ ul.author__urls {
     width: 75%;
   }
 }
+.sidebar.nosticky {
+  position: static;
+  overflow-y: visible;
+  max-height: none;
+  top: auto;
+}
