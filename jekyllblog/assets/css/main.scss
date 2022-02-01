@@ -1,0 +1,27 @@
+---
+# Only the main Sass file needs front matter (the dashes are enough)
+---
+
+@charset "utf-8";
+
+@import "minimal-mistakes/skins/{{ site.minimal_mistakes_skin | default: 'default' }}"; // skin
+@import "minimal-mistakes"; // main partials
+
+ul.author__urls {
+  li{
+    display: inline-flex;
+  }
+  a {
+    padding-right: 0;
+  }
+}
+.image-adjust-width {
+  width: 100%;
+  @include breakpoint($large) {
+    width: 75%;
+  }
+
+  @include breakpoint($x-large) {
+    width: 75%;
+  }
+}

@@ -1,0 +1,24 @@
+main:
+  - title: "About"
+    url: /about/
+  - title: "Posts"
+    url: /
+
+sidebar:
+  - title: Maybe You'll like posts on
+    children:
+      - title: "Javascript"
+        url: /javascript/
+    #   - title: "Structure"
+    #     url: /docs/structure/
+    #   - title: "Installation"
+    #     url: /docs/installation/
+    #   - title: "Upgrading"
+    #     url: /docs/upgrading/
+  - title: Currently Watching Anime
+    children:
+      - title: |-
+          <a href="https://myanimelist.net/anime/40834/Ousama_Ranking" target="_blank">
+            <img src="https://cdn.myanimelist.net/images/anime/1347/117616l.jpg" style="width:60%">
+            <br />Ousama Ranking
+          </a>

@@ -1,0 +1,34 @@
+# Defaults
+# Default config by minimal-mistakes-jekyll
+# default-sidebar: &default-sidebar
+#   title: #"Title"
+#   image: https://cdn.myanimelist.net/images/anime/1347/117616l.jpg
+#   image_alt: "image"
+#   text: "Some text here."
+#   url: "https://myanimelist.net/anime/40834/Ousama_Ranking"
+
+defaults:
+  # _posts
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: single
+      classes: wide
+      sidebar:
+        nav: sidebar
+      author_profile: true
+      read_time: true
+      comments: true
+      share: true
+      related: true
+  # _pages
+  - scope:
+      path: ""
+      type: pages
+    values:
+      layout: single
+      classes: wide
+      sidebar:
+        nav: sidebar
+      author_profile: true
