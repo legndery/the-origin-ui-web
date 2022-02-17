@@ -1,0 +1,96 @@
+---
+title: "Ask for referrals"
+permalink: /referral/
+---
+<p>
+  If you need referrals for Amazon, Thoughtworks, Flipkart, Microsoft, SmartServ, Qualys, CyberSecurityWorks, CTS etc feel free to fill this form
+  and I will try to connect with my friends and put those referrals in. Amazon will be the fastest cause I work there
+  currently.
+</p>
+<hr>
+<form accept-charset="UTF-8" id="trackReferralForm">
+  <div class="form-group">
+    <label for="exampleInputEmail1" required="required">Track your Referral*</label>
+    <input type="email" name="email" class="form-control" id="trackReferralEmail" aria-describedby="emailHelp"
+      placeholder="Enter email" required="required">
+  </div>
+  <button type="submit" id="trackReferral" class="btn btn-primary">Submit</button>
+</form>
+<h2>Submit referral Request</h2>
+<form accept-charset="UTF-8" id="referralForm">
+  <div class="form-group">
+    <label for="referrerEmail" required="required">Email address*</label>
+    <input type="email" name="referrerEmail" class="form-control" id="referralEmail" aria-describedby="emailHelp"
+      placeholder="Enter email" required="required">
+  </div>
+  <div class="form-group">
+    <label for="referralName">Name*</label>
+    <input type="text" name="referralName" class="form-control" id="referralName" placeholder="Enter your name"
+      required="required">
+  </div>
+  <div class="form-group">
+    <label for="referralJobUrl">Job URL*</label>
+    <input type="text" name="referralJobUrl" class="form-control" id="referralJobUrl" placeholder="Job url" required="required">
+  </div>
+  <div class="form-group">
+    <label for="referralJobId">Job ID</label>
+    <input type="text" name="referralJobId" class="form-control" id="referralJobId" placeholder="Job ID">
+  </div>
+  <div class="form-group">
+    <label for="referralAboutUrself">Why you?*</label>
+    <textarea required="required" name="referralAboutUrself" class="form-control" id="referralAboutUrself"></textarea>
+  </div>
+  <hr>
+  <div class="form-group mt-3">
+    <label class="mr-2">URL of your CV in <b>PDF</b>*</label>
+    <p>The reason I decided against uploading CV is that you can control the visibility and security of the file, cause resumes contain sensitive infos like phone number</p>
+    <input type="text" name="name" class="form-control" id="referralCvUrl" placeholder="CV Url" required="required">
+  </div>
+  <hr>
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+<script>
+  $(document).ready(function () {
+    const BASE_URL = 'https://aritra.dev/napi/v1/';
+    const $ = window.jQuery;
+    function trackReferral() {
+      $.ajax({
+        url: BASE_URL + 'referral',
+        type: 'GET',
+        data:{
+          email: $('#trackReferralEmail').val()
+        }
+      }).done(function (data) {
+        console.log(data);
+      });
+    }
+    const trackerForm = $('#trackReferralForm');
+    trackerForm.submit(function (e) {
+      e.preventDefault();
+      trackReferral();
+    });
+    
+    function submitReferralRequest() {
+      $.ajax({
+        url: BASE_URL + 'referral',
+        type: 'POST',
+        data: {
+          referrerEmail: $('#referralEmail').val(),
+          referralName: $('#referralName').val(),
+          referralJobUrl: $('#referralJobUrl').val(),
+          referralJobId: $('#referralJobId').val(),
+          referralAboutUrself: $('#referralAboutUrself').val(),
+          referralCvUrl: $('#referralCvUrl').val()
+        }
+      }).done(function (data) {
+        console.log(data);
+      });
+    }
+    const referralForm = $('#referralForm');
+    referralForm.submit(function (e) {
+      e.preventDefault();
+      submitReferralRequest();
+    });
+  });
+
+</script>

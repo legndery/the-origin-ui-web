@@ -273,3 +273,6 @@ compress_html:
   clippings: all
   ignore:
     envs: development
+#put jquery at the top
+head_scripts:
+  - https://code.jquery.com/jquery-3.3.1.min.js

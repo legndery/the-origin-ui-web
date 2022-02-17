@@ -3,6 +3,8 @@ main:
     url: /about/
   - title: "Posts"
     url: /
+  - title: "Need Referral?"
+    url: /referral/
 
 sidebar:
   - title: Maybe You'll like posts on
